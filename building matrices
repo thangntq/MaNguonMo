@@ -1,0 +1,50 @@
+Create a 2-D array whose diagonal equals [a, b, c, d] and 0's elsewhere.
+import numpy as np
+import tkinter as tk
+
+
+def create_array():
+    a = int(entry_a.get())
+    b = int(entry_b.get())
+    c = int(entry_c.get())
+    d = int(entry_d.get())
+
+    array2 = np.diag([a, b, c, d])
+    result_label.config(text="Array 2:\n" + str(array2))
+
+
+# Create the main window
+window = tk.Tk()
+window.title("Create Array GUI")
+
+# Create input labels and entry fields
+label_a = tk.Label(window, text="nhap a:")
+label_a.pack()
+entry_a = tk.Entry(window)
+entry_a.pack()
+
+label_b = tk.Label(window, text="nhap b:")
+label_b.pack()
+entry_b = tk.Entry(window)
+entry_b.pack()
+
+label_c = tk.Label(window, text="nhap c:")
+label_c.pack()
+entry_c = tk.Entry(window)
+entry_c.pack()
+
+label_d = tk.Label(window, text="nhap d:")
+label_d.pack()
+entry_d = tk.Entry(window)
+entry_d.pack()
+
+# Create button to generate the array
+generate_button = tk.Button(window, text="Create Array", command=create_array)
+generate_button.pack()
+
+# Create label to display result
+result_label = tk.Label(window, text="Array 2:")
+result_label.pack()
+
+# Start the main event loop
+window.mainloop()
