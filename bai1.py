@@ -1,8 +1,7 @@
 import numpy as np
 from tkinter import *
-import tkinter
 from tkinter.ttk import *
-from tkinter import messagebox
+
 
 win = Tk()
 win.title("TAO MANG")
