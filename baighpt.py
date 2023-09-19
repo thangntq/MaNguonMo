@@ -6,7 +6,10 @@ def solve_equation():
     try:
         # Lấy số biến (n)
         n = int(variables_entry.get())
-
+        # nhóm bạn có thể thêm 1 vò while vào đây để lặp lại số phương trình, vì có thể người dùng có thể nhập 0 hoặc 1 như thế sẽ bị lỗi
+        # ví dụ như sau 
+        # while (n < 2 ) :
+        #      n = int (input ("Nhập lại số n vì đây không phải hệ Phương trình: "))
         # Tạo ma trận A từ các giá trị nhập vào
         A = np.zeros((n, n))
         for i in range(n):
