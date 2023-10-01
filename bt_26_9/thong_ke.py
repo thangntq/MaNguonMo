@@ -28,7 +28,11 @@ print('SV dat diem C+ :',tongsvCp,'Tong: ',np.sum(tongsvCp))
 tongsvC= in_data[:,7]
 print('SV dat diem C :',tongsvC,'Tong: ',np.sum(tongsvC))
 tongsvDp= in_data[:,8]
+<<<<<<< HEAD
 print('SV dat diem D+ :',tongsvDp,'Tong: ',np.sum(tongsvDp))
+=======
+print('SV dat diem Dp :',tongsvDp,'Tong: ',np.sum(tongsvDp))
+>>>>>>> origin/main
 tongsvD= in_data[:,9]
 print('SV dat diem D :',tongsvD,'Tong: ',np.sum(tongsvD))
 tongsvF= in_data[:,10]
@@ -61,6 +65,7 @@ average_scores = np.mean(in_data[:, 2:11], axis=0)
 
 # In ra trung bình cộng
 print('Trung bình cộng số sinh viên đạt từng loại điểm:')
+<<<<<<< HEAD
 print('A+:', int(average_scores[0]))
 print('A:', int(average_scores[1]))
 print('B+:', int(average_scores[2]))
@@ -86,6 +91,17 @@ print("su chech lech giua C va D la: {0}".format(tinh_su_chenh_lech(tongsvC,tong
 print("su chech lech giua C va F la: {0}".format(tinh_su_chenh_lech(tongsvC,tongsvF)))
 print("su chech lech giua D va F la: {0}".format(tinh_su_chenh_lech(tongsvD,tongsvF)))
 
+=======
+print('A+:', average_scores[0])
+print('A:', average_scores[1])
+print('B+:', average_scores[2])
+print('B:', average_scores[3])
+print('C+:', average_scores[4])
+print('C:', average_scores[5])
+print('D+:', average_scores[6])
+print('D:', average_scores[7])
+print('F:', average_scores[8])
+>>>>>>> origin/main
 
 # Tính tổng số sinh viên đạt mỗi bài kiểm tra
 total_scores = np.sum(in_data[:, -5:], axis=0)
@@ -98,6 +114,7 @@ print('TX1:', total_scores[-3])
 print('TX2:', total_scores[-2])
 print('Cuối kỳ:', total_scores[-1])
 
+<<<<<<< HEAD
 #compare l1, l2, tx1, tx2, final
 def compare(sum1,sum2,ten_diem_1,ten_diem_2):
     if sum1 > sum2 :
@@ -116,6 +133,8 @@ compare(total_scores[-5],total_scores[-4],"L1","L2")
 
 
 
+=======
+>>>>>>> origin/main
 
 # Dữ liệu cho các đồ thị tròn
 nhan = ['A+', 'A', 'B+', 'B', 'C+', 'C','D+','D','F']
