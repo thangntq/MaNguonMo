@@ -198,3 +198,15 @@ plt.ylabel('Số Lượng Sinh Viên')
 plt.title('Phân Phối Điểm Của Tất Cả Sinh Viên')
 plt.legend()
 plt.show()
+
+# Tạo mảng chứa tổng số sinh viên đạt từng loại điểm qua từng kỳ thi
+total_scores_per_exam = np.sum(in_data[:, 2:11], axis=1)
+
+# Vẽ đồ thị đường cho biến động của số lượng sinh viên đạt từng loại điểm qua từng kỳ thi
+plt.plot(total_scores_per_exam, marker='o', linestyle='-', color='b')
+plt.xlabel('Kỳ Thi')
+plt.ylabel('Tổng Số Sinh Viên Đạt')
+plt.title('Biến Động Số Lượng Sinh Viên Đạt Điểm Qua Các Kỳ Thi')
+plt.xticks(np.arange(len(total_scores_per_exam)), np.arange(1, len(total_scores_per_exam) + 1))
+plt.grid(True)
+plt.show()
