@@ -183,3 +183,18 @@ ax.legend()
 
 plt.show()
 
+# Vẽ histogram cho điểm của tất cả sinh viên
+plt.hist(in_data[:, 10], bins=10, alpha=0.7, label='Điểm F')
+plt.hist(in_data[:, 9], bins=10, alpha=0.7, label='Điểm D')
+plt.hist(in_data[:, 8], bins=10, alpha=0.7, label='Điểm D+')
+plt.hist(in_data[:, 7], bins=10, alpha=0.7, label='Điểm C')
+plt.hist(in_data[:, 6], bins=10, alpha=0.7, label='Điểm C+')
+plt.hist(in_data[:, 5], bins=10, alpha=0.7, label='Điểm B')
+plt.hist(in_data[:, 4], bins=10, alpha=0.7, label='Điểm B+')
+plt.hist(in_data[:, 3], bins=10, alpha=0.7, label='Điểm A')
+plt.hist(in_data[:, 2], bins=10, alpha=0.7, label='Điểm A+')
+plt.xlabel('Điểm')
+plt.ylabel('Số Lượng Sinh Viên')
+plt.title('Phân Phối Điểm Của Tất Cả Sinh Viên')
+plt.legend()
+plt.show()
