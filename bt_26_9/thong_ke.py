@@ -164,4 +164,22 @@ plt.tight_layout()
 # Hiển thị figure
 plt.show()
 
-   
+# Dữ liệu cho đồ thị cột
+labels = ['Lop 1', 'Lop 2', 'Lop 3', 'Lop 4', 'Lop 5', 'Lop 6', 'Lop 7', 'Lop 8', 'Lop 9']
+x = np.arange(len(labels))
+
+fig, ax = plt.subplots()
+width = 0.1  # Chiều rộng của cột
+
+for i in range(9):
+    ax.bar(x + i * width, data[i], width, label=labels[i])
+
+ax.set_xlabel('Loại Điểm')
+ax.set_ylabel('Số Lượng Sinh Viên')
+ax.set_title('Số Lượng Sinh Viên Đạt Từng Loại Điểm Theo Lớp')
+ax.set_xticks(x + 4.5 * width)
+ax.set_xticklabels(nhan)
+ax.legend()
+
+plt.show()
+
