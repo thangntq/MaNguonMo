@@ -130,9 +130,6 @@ compare(total_scores[-3],total_scores[-1],"TX1","Cuoi ky")
 compare(total_scores[-2],total_scores[-1],"TX2","Cuoi ky")
 compare(total_scores[-5],total_scores[-4],"L1","L2")
 
-
-
-
 # Dữ liệu cho các đồ thị tròn
 nhan = ['A+', 'A', 'B+', 'B', 'C+', 'C','D+','D','F']
 
@@ -148,21 +145,6 @@ data = [
     [in_data[7,2],in_data[7,3],in_data[7,4],in_data[7,5],in_data[7,6],in_data[7,7],in_data[7,8],in_data[7,9],in_data[7,10]],
     [in_data[8,2],in_data[8,3],in_data[8,4],in_data[8,5],in_data[8,6],in_data[8,7],in_data[8,8],in_data[8,9],in_data[8,10]],
 ]
-
-fig, axs = plt.subplots(3, 3, figsize=(10, 10))
-
-# Vẽ 9 đồ thị tròn
-for i in range(3):
-    for j in range(3):
-        ax = axs[i, j]
-        ax.pie(data[i * 3 + j], labels=nhan, autopct='%1.1f%%')
-        ax.set_title(f'Pie Chart {i * 3 + j + 1}')
-
-# Điều chỉnh khoảng cách giữa các đồ thị tròn
-plt.tight_layout()
-
-# Hiển thị figure
-plt.show()
 
 # Dữ liệu cho đồ thị cột
 labels = ['Lop 1', 'Lop 2', 'Lop 3', 'Lop 4', 'Lop 5', 'Lop 6', 'Lop 7', 'Lop 8', 'Lop 9']
@@ -183,21 +165,6 @@ ax.legend()
 
 plt.show()
 
-# Vẽ histogram cho điểm của tất cả sinh viên
-plt.hist(in_data[:, 10], bins=10, alpha=0.7, label='Điểm F')
-plt.hist(in_data[:, 9], bins=10, alpha=0.7, label='Điểm D')
-plt.hist(in_data[:, 8], bins=10, alpha=0.7, label='Điểm D+')
-plt.hist(in_data[:, 7], bins=10, alpha=0.7, label='Điểm C')
-plt.hist(in_data[:, 6], bins=10, alpha=0.7, label='Điểm C+')
-plt.hist(in_data[:, 5], bins=10, alpha=0.7, label='Điểm B')
-plt.hist(in_data[:, 4], bins=10, alpha=0.7, label='Điểm B+')
-plt.hist(in_data[:, 3], bins=10, alpha=0.7, label='Điểm A')
-plt.hist(in_data[:, 2], bins=10, alpha=0.7, label='Điểm A+')
-plt.xlabel('Điểm')
-plt.ylabel('Số Lượng Sinh Viên')
-plt.title('Phân Phối Điểm Của Tất Cả Sinh Viên')
-plt.legend()
-plt.show()
 
 # Tạo mảng chứa tổng số sinh viên đạt từng loại điểm qua từng kỳ thi
 total_scores_per_exam = np.sum(in_data[:, 2:11], axis=1)
