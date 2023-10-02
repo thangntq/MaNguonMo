@@ -130,7 +130,7 @@ compare(total_scores[-3],total_scores[-1],"TX1","Cuoi ky")
 compare(total_scores[-2],total_scores[-1],"TX2","Cuoi ky")
 compare(total_scores[-5],total_scores[-4],"L1","L2")
 
-# Dữ liệu cho các đồ thị tròn
+# Dữ liệu cho các đồ thị 
 nhan = ['A+', 'A', 'B+', 'B', 'C+', 'C','D+','D','F']
 
 # Dữ liệu mẫu cho 9 đồ thị cột
@@ -167,13 +167,38 @@ plt.show()
 
 
 # Tạo mảng chứa tổng số sinh viên đạt từng loại điểm qua từng kỳ thi
-total_scores_per_exam = np.sum(in_data[:, 2:11], axis=1)
+tim_data=np.array([
+    [in_data[0, 11],in_data[0, 12],in_data[0, 13],in_data[0, 14],in_data[0, 15]],
+    [in_data[1, 11],in_data[1, 12],in_data[1, 13],in_data[1, 14],in_data[1, 15]],
+    [in_data[2, 11],in_data[2, 12],in_data[2, 13],in_data[2, 14],in_data[2, 15]],
+    [in_data[3, 11],in_data[3, 12],in_data[3, 13],in_data[3, 14],in_data[3, 15]],
+    [in_data[4, 11],in_data[4, 12],in_data[4, 13],in_data[4, 14],in_data[4, 15]],
+    [in_data[5, 11],in_data[5, 12],in_data[5, 13],in_data[5, 14],in_data[5, 15]],
+    [in_data[6, 11],in_data[6, 12],in_data[6, 13],in_data[6, 14],in_data[6, 15]],
+    [in_data[7, 11],in_data[7, 12],in_data[7, 13],in_data[7, 14],in_data[7, 15]],
+    [in_data[8, 11],in_data[8, 12],in_data[8, 13],in_data[8, 14],in_data[8, 15]],
+])
 
-# Vẽ đồ thị đường cho biến động của số lượng sinh viên đạt từng loại điểm qua từng kỳ thi
-plt.plot(total_scores_per_exam, marker='o', linestyle='-', color='b')
-plt.xlabel('Kỳ Thi')
-plt.ylabel('Tổng Số Sinh Viên Đạt')
-plt.title('Biến Động Số Lượng Sinh Viên Đạt Điểm Qua Các Kỳ Thi')
-plt.xticks(np.arange(len(total_scores_per_exam)), np.arange(1, len(total_scores_per_exam) + 1))
+
+# Tạo mảng chứa tên của các điểm (L1, L2, TX1, TX2, Cuối kỳ)
+labels = ['L1', 'L2', 'TX1', 'TX2', 'Cuối kỳ']
+
+# Tạo mảng chứa tên của các lớp từ 1 đến 9
+classes = [f'Lớp {i}' for i in range(1, 10)]
+
+# Vẽ đồ thị
+plt.figure(figsize=(12, 6))
+for i in range(5):
+    plt.plot(classes, tim_data[:, i], label=labels[i])
+
+# Thêm thông tin trục và tiêu đề
+plt.xlabel('Lớp')
+plt.ylabel('Điểm')
+plt.title('Biểu đồ điểm L1, L2, TX1, TX2, và Cuối kỳ từ Lớp 1 đến Lớp 9')
+
+# Hiển thị chú thích
+plt.legend()
+
+# Hiển thị đồ thị
 plt.grid(True)
 plt.show()
